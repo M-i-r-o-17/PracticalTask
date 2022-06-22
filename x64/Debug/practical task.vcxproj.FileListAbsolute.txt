@@ -1,0 +1,5 @@
+E:\C++\practical task\x64\Debug\practical task.vcxproj.AssemblyReference.cache
+E:\C++\practical task\x64\Debug\practical task.vcxproj.SuggestedBindingRedirects.cache
+E:\C++\practical task\x64\Debug\practical task.exe
+E:\C++\practical task\x64\Debug\practicaltask.MyForm.resources
+E:\C++\practical task\x64\Debug\practical task.vcxproj.GenerateResource.cache
