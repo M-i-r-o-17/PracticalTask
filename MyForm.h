@@ -1,5 +1,5 @@
 #pragma once
-
+#include	"input.h"
 namespace practicaltask {
 
 	using namespace System;
@@ -70,6 +70,7 @@ namespace practicaltask {
 			this->bInput->TabIndex = 0;
 			this->bInput->Text = L"Input";
 			this->bInput->UseVisualStyleBackColor = true;
+			this->bInput->Click += gcnew System::EventHandler(this, &MyForm::bInput_Click);
 			// 
 			// bCalc
 			// 
@@ -100,9 +101,9 @@ namespace practicaltask {
 			this->Controls->Add(this->bExit);
 			this->Controls->Add(this->bCalc);
 			this->Controls->Add(this->bInput);
+			this->Name = L"MyForm";
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
-			this->Name = L"MyForm";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Мирошниченко Владимир Васильевич 153-0б Вариант 10";
@@ -113,5 +114,10 @@ namespace practicaltask {
 	private: System::Void bExit_Click(System::Object^ sender, System::EventArgs^ e) {
 			this->Close();
 		}
-	};
+	private: System::Void bInput_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		input form;
+		form.ShowDialog();
+	}
+};
 }

@@ -3,3 +3,4 @@ E:\C++\practical task\x64\Debug\practical task.vcxproj.SuggestedBindingRedirects
 E:\C++\practical task\x64\Debug\practical task.exe
 E:\C++\practical task\x64\Debug\practicaltask.MyForm.resources
 E:\C++\practical task\x64\Debug\practical task.vcxproj.GenerateResource.cache
+E:\C++\practical task\x64\Debug\practicaltask.input.resources
