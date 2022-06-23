@@ -1,5 +1,6 @@
 #pragma once
 #include	"input.h"
+#include	"Data.h"
 namespace practicaltask {
 
 	using namespace System;
@@ -14,13 +15,12 @@ namespace practicaltask {
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
+	public: Data * mainData;
 	public:
 		MyForm(void)
 		{
+			mainData = new Data();
 			InitializeComponent();
-			//
-			//TODO: добавьте код конструктора
-			//
 		}
 
 	protected:
@@ -33,6 +33,8 @@ namespace practicaltask {
 			{
 				delete components;
 			}
+
+			delete mainData;
 		}
 	private: System::Windows::Forms::Button^ bInput;
 	private: System::Windows::Forms::Button^ bCalc;
@@ -113,11 +115,11 @@ namespace practicaltask {
 #pragma endregion
 	private: System::Void bExit_Click(System::Object^ sender, System::EventArgs^ e) {
 			this->Close();
-		}
+	}
 	private: System::Void bInput_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		input form;
-		form.ShowDialog();
+		input formInput(mainData);
+		formInput.ShowDialog();
 	}
 };
 }

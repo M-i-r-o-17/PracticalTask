@@ -1,3 +1,3 @@
 ﻿  MyForm.cpp
-  MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  practical task.vcxproj -> E:\C++\practical task\x64\Debug\practical task.exe
+E:\C++\practical task\input.h(374,1): error C2451: условное выражение типа "void" является недопустимым
+E:\C++\practical task\input.h(374,7): message : Выражение, имеющее тип void, нельзя преобразовать в другой тип
