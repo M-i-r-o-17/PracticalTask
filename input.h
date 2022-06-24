@@ -60,9 +60,14 @@ namespace practicaltask {
 	private: System::Windows::Forms::TextBox^ tbB;
 	private: System::Windows::Forms::Label^ lB;
 	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::CheckBox^ checkBox1;
-	private: System::Windows::Forms::CheckBox^ checkBox2;
+	private: System::Windows::Forms::CheckBox^ cbShowMax;
+
+	private: System::Windows::Forms::CheckBox^ cbShowMaxId;
+
+
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::CheckBox^ cbSorted;
+
 
 
 
@@ -92,9 +97,10 @@ namespace practicaltask {
 			this->tbB = (gcnew System::Windows::Forms::TextBox());
 			this->lB = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->cbSorted = (gcnew System::Windows::Forms::CheckBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
+			this->cbShowMaxId = (gcnew System::Windows::Forms::CheckBox());
+			this->cbShowMax = (gcnew System::Windows::Forms::CheckBox());
 			this->FirstNumber->SuspendLayout();
 			this->Random->SuspendLayout();
 			this->A->SuspendLayout();
@@ -162,6 +168,7 @@ namespace practicaltask {
 			this->bRandom->TabIndex = 2;
 			this->bRandom->Text = L"Случайно";
 			this->bRandom->UseVisualStyleBackColor = true;
+			this->bRandom->Click += gcnew System::EventHandler(this, &input::bRandom_Click);
 			// 
 			// tbRandom
 			// 
@@ -171,6 +178,7 @@ namespace practicaltask {
 			this->tbRandom->Name = L"tbRandom";
 			this->tbRandom->Size = System::Drawing::Size(380, 20);
 			this->tbRandom->TabIndex = 1;
+			this->tbRandom->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &input::tbRandom_KeyPress);
 			// 
 			// cbRandom
 			// 
@@ -255,21 +263,36 @@ namespace practicaltask {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->panel1->Controls->Add(this->cbSorted);
 			this->panel1->Controls->Add(this->button1);
-			this->panel1->Controls->Add(this->checkBox2);
-			this->panel1->Controls->Add(this->checkBox1);
+			this->panel1->Controls->Add(this->cbShowMaxId);
+			this->panel1->Controls->Add(this->cbShowMax);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel1->Location = System::Drawing::Point(0, 120);
 			this->panel1->Margin = System::Windows::Forms::Padding(0);
 			this->panel1->Name = L"panel1";
 			this->panel1->Padding = System::Windows::Forms::Padding(5);
-			this->panel1->Size = System::Drawing::Size(684, 91);
+			this->panel1->Size = System::Drawing::Size(684, 111);
 			this->panel1->TabIndex = 4;
+			// 
+			// cbSorted
+			// 
+			this->cbSorted->AutoSize = true;
+			this->cbSorted->Dock = System::Windows::Forms::DockStyle::Top;
+			this->cbSorted->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->cbSorted->Location = System::Drawing::Point(5, 53);
+			this->cbSorted->Name = L"cbSorted";
+			this->cbSorted->Size = System::Drawing::Size(674, 24);
+			this->cbSorted->TabIndex = 3;
+			this->cbSorted->Text = L"Сортировать массив";
+			this->cbSorted->UseVisualStyleBackColor = true;
+			this->cbSorted->CheckedChanged += gcnew System::EventHandler(this, &input::checkBox1_CheckedChanged);
 			// 
 			// button1
 			// 
 			this->button1->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->button1->Location = System::Drawing::Point(5, 63);
+			this->button1->Location = System::Drawing::Point(5, 83);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(674, 23);
 			this->button1->TabIndex = 2;
@@ -277,46 +300,46 @@ namespace practicaltask {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &input::button1_Click);
 			// 
-			// checkBox2
+			// cbShowMaxId
 			// 
-			this->checkBox2->AutoSize = true;
-			this->checkBox2->Dock = System::Windows::Forms::DockStyle::Top;
-			this->checkBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->cbShowMaxId->AutoSize = true;
+			this->cbShowMaxId->Dock = System::Windows::Forms::DockStyle::Top;
+			this->cbShowMaxId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->checkBox2->Location = System::Drawing::Point(5, 29);
-			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(674, 24);
-			this->checkBox2->TabIndex = 1;
-			this->checkBox2->Text = L"Вывести id максимального числа";
-			this->checkBox2->UseVisualStyleBackColor = true;
+			this->cbShowMaxId->Location = System::Drawing::Point(5, 29);
+			this->cbShowMaxId->Name = L"cbShowMaxId";
+			this->cbShowMaxId->Size = System::Drawing::Size(674, 24);
+			this->cbShowMaxId->TabIndex = 1;
+			this->cbShowMaxId->Text = L"Вывести id максимального числа";
+			this->cbShowMaxId->UseVisualStyleBackColor = true;
 			// 
-			// checkBox1
+			// cbShowMax
 			// 
-			this->checkBox1->AutoSize = true;
-			this->checkBox1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->checkBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->cbShowMax->AutoSize = true;
+			this->cbShowMax->Dock = System::Windows::Forms::DockStyle::Top;
+			this->cbShowMax->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->checkBox1->Location = System::Drawing::Point(5, 5);
-			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(674, 24);
-			this->checkBox1->TabIndex = 0;
-			this->checkBox1->Text = L"Вывести максимальное число";
-			this->checkBox1->UseVisualStyleBackColor = true;
+			this->cbShowMax->Location = System::Drawing::Point(5, 5);
+			this->cbShowMax->Name = L"cbShowMax";
+			this->cbShowMax->Size = System::Drawing::Size(674, 24);
+			this->cbShowMax->TabIndex = 0;
+			this->cbShowMax->Text = L"Вывести максимальное число";
+			this->cbShowMax->UseVisualStyleBackColor = true;
 			// 
 			// input
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(684, 211);
+			this->ClientSize = System::Drawing::Size(684, 231);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->B);
 			this->Controls->Add(this->A);
 			this->Controls->Add(this->Random);
 			this->Controls->Add(this->FirstNumber);
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(700, 250);
+			this->MaximumSize = System::Drawing::Size(700, 270);
 			this->MinimizeBox = false;
-			this->MinimumSize = System::Drawing::Size(16, 250);
+			this->MinimumSize = System::Drawing::Size(16, 270);
 			this->Name = L"input";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -348,19 +371,20 @@ namespace practicaltask {
 			this->tbA->Text = data->a.ToString();
 			this->tbB->Text = data->b.ToString();
 
-			this->checkBox1->Checked = data->showMax;
-			this->checkBox2->Checked = data->showMaxId;
+			this->cbShowMax->Checked = data->showMax;
+			this->cbShowMaxId->Checked = data->showMaxId;
+			this->cbSorted->Checked = data->sorted;
 			
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		data->StartNum = Int32::Parse(this->tbFirstNumber->Text);
+		data->StartNum = int::Parse(this->tbFirstNumber->Text);
 		data->autoSeed = this->cbRandom->Checked;
-		data->Seed = Int32::Parse(this->tbRandom->Text);
-		data->a = Int32::Parse(this->tbA->Text);
-		data->b = Int32::Parse(this->tbB->Text);
-		data->showMax = this->checkBox1->Checked;
-		data->showMaxId = this->checkBox2->Checked;
+		data->Seed = int::Parse(this->tbRandom->Text);
+		data->a = int::Parse(this->tbA->Text);
+		data->b = int::Parse(this->tbB->Text);
+		data->showMax = this->cbShowMax->Checked;
+		data->showMaxId = this->cbShowMaxId->Checked;
 		this->Close();
 	}
 	private: System::Void cbRandom_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -375,6 +399,19 @@ namespace practicaltask {
 	}
 	private: System::Void tbFirstNumber_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
 		/*Реализовать ограничитель*/
+	}
+
+	private: System::Void tbRandom_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		if (this->tbRandom->Text->Length > 9 || !((e->KeyChar >= '0') && (e->KeyChar <= '9'))){
+			e->Handled = true;
+		}
+	}
+	private: System::Void bRandom_Click(System::Object^ sender, System::EventArgs^ e) {
+		data->GenerateSeed();
+		this->tbRandom->Text = data->Seed.ToString();
+	}
+	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		data->sorted = this->cbSorted->Checked;
 	}
 	};
 }
