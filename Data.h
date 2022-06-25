@@ -36,9 +36,9 @@ namespace practicaltask {
 		};
 
 		private: void Sort() {
-			for (int i = 1; i < Count - 1; i++) {
+			for (int i = 0; i < MaxID - 1; i++) {
 				int tempId = i;
-				for (int j = i; j < Count; j++) {
+				for (int j = i; j < MaxID; j++) {
 					if (Array[tempId] > Array[j]) {
 						tempId = j;
 					}
@@ -74,6 +74,7 @@ namespace practicaltask {
 		}
 	
 		public: void CalcData() {
+
 			this->Array[0] = this->StartNum;
 			Generate();
 			Summ();

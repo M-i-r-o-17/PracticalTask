@@ -118,7 +118,7 @@ namespace practicaltask {
 			this->FirstNumber->Margin = System::Windows::Forms::Padding(0);
 			this->FirstNumber->Name = L"FirstNumber";
 			this->FirstNumber->Padding = System::Windows::Forms::Padding(5);
-			this->FirstNumber->Size = System::Drawing::Size(684, 30);
+			this->FirstNumber->Size = System::Drawing::Size(524, 30);
 			this->FirstNumber->TabIndex = 0;
 			// 
 			// tbFirstNumber
@@ -126,7 +126,7 @@ namespace practicaltask {
 			this->tbFirstNumber->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->tbFirstNumber->Location = System::Drawing::Point(120, 5);
 			this->tbFirstNumber->Name = L"tbFirstNumber";
-			this->tbFirstNumber->Size = System::Drawing::Size(559, 20);
+			this->tbFirstNumber->Size = System::Drawing::Size(399, 20);
 			this->tbFirstNumber->TabIndex = 1;
 			this->tbFirstNumber->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &input::tbFirstNumber_KeyPress);
 			// 
@@ -153,7 +153,7 @@ namespace practicaltask {
 			this->Random->Margin = System::Windows::Forms::Padding(0);
 			this->Random->Name = L"Random";
 			this->Random->Padding = System::Windows::Forms::Padding(5);
-			this->Random->Size = System::Drawing::Size(684, 30);
+			this->Random->Size = System::Drawing::Size(524, 30);
 			this->Random->TabIndex = 1;
 			// 
 			// bRandom
@@ -161,10 +161,10 @@ namespace practicaltask {
 			this->bRandom->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->bRandom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->bRandom->Location = System::Drawing::Point(578, 5);
+			this->bRandom->Location = System::Drawing::Point(440, 5);
 			this->bRandom->Margin = System::Windows::Forms::Padding(0);
 			this->bRandom->Name = L"bRandom";
-			this->bRandom->Size = System::Drawing::Size(101, 20);
+			this->bRandom->Size = System::Drawing::Size(79, 20);
 			this->bRandom->TabIndex = 2;
 			this->bRandom->Text = L"Случайно";
 			this->bRandom->UseVisualStyleBackColor = true;
@@ -176,7 +176,7 @@ namespace practicaltask {
 			this->tbRandom->Location = System::Drawing::Point(198, 5);
 			this->tbRandom->Margin = System::Windows::Forms::Padding(5);
 			this->tbRandom->Name = L"tbRandom";
-			this->tbRandom->Size = System::Drawing::Size(380, 20);
+			this->tbRandom->Size = System::Drawing::Size(242, 20);
 			this->tbRandom->TabIndex = 1;
 			this->tbRandom->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &input::tbRandom_KeyPress);
 			// 
@@ -204,7 +204,7 @@ namespace practicaltask {
 			this->A->Margin = System::Windows::Forms::Padding(0);
 			this->A->Name = L"A";
 			this->A->Padding = System::Windows::Forms::Padding(5);
-			this->A->Size = System::Drawing::Size(684, 30);
+			this->A->Size = System::Drawing::Size(524, 30);
 			this->A->TabIndex = 2;
 			// 
 			// tbA
@@ -212,8 +212,9 @@ namespace practicaltask {
 			this->tbA->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->tbA->Location = System::Drawing::Point(75, 5);
 			this->tbA->Name = L"tbA";
-			this->tbA->Size = System::Drawing::Size(604, 20);
+			this->tbA->Size = System::Drawing::Size(444, 20);
 			this->tbA->TabIndex = 1;
+			this->tbA->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &input::tbA_KeyPress);
 			// 
 			// lA
 			// 
@@ -237,7 +238,7 @@ namespace practicaltask {
 			this->B->Margin = System::Windows::Forms::Padding(0);
 			this->B->Name = L"B";
 			this->B->Padding = System::Windows::Forms::Padding(5);
-			this->B->Size = System::Drawing::Size(684, 30);
+			this->B->Size = System::Drawing::Size(524, 30);
 			this->B->TabIndex = 3;
 			// 
 			// tbB
@@ -245,8 +246,9 @@ namespace practicaltask {
 			this->tbB->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->tbB->Location = System::Drawing::Point(75, 5);
 			this->tbB->Name = L"tbB";
-			this->tbB->Size = System::Drawing::Size(604, 20);
+			this->tbB->Size = System::Drawing::Size(444, 20);
 			this->tbB->TabIndex = 1;
+			this->tbB->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &input::tbB_KeyPress);
 			// 
 			// lB
 			// 
@@ -272,7 +274,7 @@ namespace practicaltask {
 			this->panel1->Margin = System::Windows::Forms::Padding(0);
 			this->panel1->Name = L"panel1";
 			this->panel1->Padding = System::Windows::Forms::Padding(5);
-			this->panel1->Size = System::Drawing::Size(684, 111);
+			this->panel1->Size = System::Drawing::Size(524, 111);
 			this->panel1->TabIndex = 4;
 			// 
 			// cbSorted
@@ -283,7 +285,7 @@ namespace practicaltask {
 				static_cast<System::Byte>(204)));
 			this->cbSorted->Location = System::Drawing::Point(5, 53);
 			this->cbSorted->Name = L"cbSorted";
-			this->cbSorted->Size = System::Drawing::Size(674, 24);
+			this->cbSorted->Size = System::Drawing::Size(514, 24);
 			this->cbSorted->TabIndex = 3;
 			this->cbSorted->Text = L"Сортировать массив";
 			this->cbSorted->UseVisualStyleBackColor = true;
@@ -294,7 +296,7 @@ namespace practicaltask {
 			this->button1->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->button1->Location = System::Drawing::Point(5, 83);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(674, 23);
+			this->button1->Size = System::Drawing::Size(514, 23);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Применить";
 			this->button1->UseVisualStyleBackColor = true;
@@ -308,7 +310,7 @@ namespace practicaltask {
 				static_cast<System::Byte>(204)));
 			this->cbShowMaxId->Location = System::Drawing::Point(5, 29);
 			this->cbShowMaxId->Name = L"cbShowMaxId";
-			this->cbShowMaxId->Size = System::Drawing::Size(674, 24);
+			this->cbShowMaxId->Size = System::Drawing::Size(514, 24);
 			this->cbShowMaxId->TabIndex = 1;
 			this->cbShowMaxId->Text = L"Вывести id максимального числа";
 			this->cbShowMaxId->UseVisualStyleBackColor = true;
@@ -321,7 +323,7 @@ namespace practicaltask {
 				static_cast<System::Byte>(204)));
 			this->cbShowMax->Location = System::Drawing::Point(5, 5);
 			this->cbShowMax->Name = L"cbShowMax";
-			this->cbShowMax->Size = System::Drawing::Size(674, 24);
+			this->cbShowMax->Size = System::Drawing::Size(514, 24);
 			this->cbShowMax->TabIndex = 0;
 			this->cbShowMax->Text = L"Вывести максимальное число";
 			this->cbShowMax->UseVisualStyleBackColor = true;
@@ -330,16 +332,16 @@ namespace practicaltask {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(684, 231);
+			this->ClientSize = System::Drawing::Size(524, 231);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->B);
 			this->Controls->Add(this->A);
 			this->Controls->Add(this->Random);
 			this->Controls->Add(this->FirstNumber);
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(700, 270);
+			this->MaximumSize = System::Drawing::Size(540, 270);
 			this->MinimizeBox = false;
-			this->MinimumSize = System::Drawing::Size(16, 270);
+			this->MinimumSize = System::Drawing::Size(525, 270);
 			this->Name = L"input";
 			this->ShowIcon = false;
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -399,6 +401,14 @@ namespace practicaltask {
 	}
 	private: System::Void tbFirstNumber_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
 		/*Реализовать ограничитель*/
+		if (e->KeyChar == '-') {
+			int temp = int::Parse(this->tbFirstNumber->Text);
+			temp *= -1;
+			this->tbFirstNumber->Text = temp.ToString();
+		}
+		if (!((e->KeyChar >= '0') && (e->KeyChar <= '9'))) {
+			e->Handled = true;
+		}
 	}
 
 	private: System::Void tbRandom_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
@@ -413,5 +423,25 @@ namespace practicaltask {
 	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		data->sorted = this->cbSorted->Checked;
 	}
-	};
+	private: System::Void tbA_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		if (e->KeyChar == '-') {
+			int temp = int::Parse(this->tbA->Text);
+			temp *= -1;
+			this->tbA->Text = temp.ToString();
+		}
+		if (!((e->KeyChar >= '0') && (e->KeyChar <= '9'))) {
+			e->Handled = true;
+		}
+	}
+	private: System::Void tbB_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		if (e->KeyChar == '-') {
+			int temp = int::Parse(this->tbB->Text);
+			temp *= -1;
+			this->tbB->Text = temp.ToString();
+		}
+		if (!((e->KeyChar >= '0') && (e->KeyChar <= '9'))) {
+			e->Handled = true;
+		}
+	}
+};
 }
