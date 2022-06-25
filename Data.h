@@ -39,7 +39,7 @@ namespace practicaltask {
 			for (int i = 0; i < MaxID - 1; i++) {
 				int tempId = i;
 				for (int j = i; j < MaxID; j++) {
-					if (Array[tempId] > Array[j]) {
+					if (Array[tempId] < Array[j]) {
 						tempId = j;
 					}
 				}
