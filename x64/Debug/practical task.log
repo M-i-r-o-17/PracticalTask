@@ -1,4 +1,4 @@
 ﻿  MyForm.cpp
-E:\C++\practical task\Data.h(73,45): warning C4244: =: преобразование "__int64" в "int", возможна потеря данных
+c:\users\miro17\source\repos\m-i-r-o-17\practicaltask\data.h(87): warning C4244: =: преобразование "__int64" в "int", возможна потеря данных
   MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
-  practical task.vcxproj -> E:\C++\practical task\x64\Debug\practical task.exe
+  practical task.vcxproj -> C:\Users\Miro17\Source\Repos\M-i-r-o-17\PracticalTask\x64\Debug\practical task.exe

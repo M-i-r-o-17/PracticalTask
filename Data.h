@@ -1,12 +1,14 @@
 #pragma once
 #include <ctime>
 #include <cstdlib>
+#include <vector>
+#include <algorithm>
 
 namespace practicaltask {
 
 	public class Data	{
 		public: int Count;
-		public: int *Array; 
+		public: std::vector<int> vector;
 
 		public: int StartNum;
 
@@ -23,47 +25,59 @@ namespace practicaltask {
 
 		  
 		public:  Data() : StartNum(0), Count(14), a(-10), b(10), MaxID(0), summ(0) {
-			Array = new int[14];
-			Array[0] = StartNum;
 			showMax = true;
 			showMaxId = true;
 			autoSeed = true;
 			sorted = false;
 			Seed = (int)time(NULL);
+			vector.push_back(StartNum);
 		};
 		public:	~Data() {
-			delete[] Array;
+			vector.clear();
+			vector.shrink_to_fit();
 		};
 
-		private: void Sort() {
-			for (int i = 0; i < MaxID - 1; i++) {
-				int tempId = i;
-				for (int j = i; j < MaxID; j++) {
-					if (Array[tempId] < Array[j]) {
-						tempId = j;
-					}
-				}
-				int temp = Array[tempId];
-				Array[tempId] = Array[i];
-				Array[i] = temp;
-			}
-		}
-
 		private: void Generate() {
+
+			vector.clear();
+			MaxID = 0;
+
 			std::srand(Seed);
-			for (int i = 1; i < Count; i++) {
-				Array[i] = std::rand() % 21 - 10;
-				if (Array[MaxID] < Array[i]) {
+			vector.push_back(StartNum);
+
+			for (int i = 1; i < Count - 3; i++) {
+				vector.push_back(std::rand() % 21 - 10);
+				if (vector[MaxID] < vector[i]) {
+					MaxID = i;
+				}
+			}
+
+			for (int i = Count - 3; i < Count; i++) {
+				vector.push_back(i * 10);
+				if (vector[MaxID] < vector[i]) {
 					MaxID = i;
 				}
 			}
 		}
-	
+		private: void Sort() {
+			for (int i = 0; i < MaxID; i++) {
+				int t = i;
+				for (int j = i; j < MaxID; j++) {
+					if (vector[j] > vector[t]) {
+						t = j;
+					}
+				}
+				int temp = vector[t];
+				vector[t] = vector[i];
+				vector[i] = temp;
+			}
+
+		}
 		private: void Summ() {
 			summ = 0;
 			for (int i = 0; i < MaxID; i++) {
-				if (a < Array[i] && Array[i] < b) {
-					summ += Array[i];
+				if (a < vector[i] && vector[i] < b) {
+					summ += vector[i];
 				}
 			}
 		}
@@ -74,12 +88,12 @@ namespace practicaltask {
 		}
 	
 		public: void CalcData() {
-
-			this->Array[0] = this->StartNum;
 			Generate();
 			Summ();
 			if (this->sorted) {
-				this->Sort();
+				//Sort();
+				std::sort(vector.begin(), vector.end());
+				std::reverse(vector.begin(), vector.end());
 			}
 		}
 	

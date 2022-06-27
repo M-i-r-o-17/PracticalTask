@@ -121,7 +121,7 @@ namespace practicaltask {
 			this->tmMaxElemnt->Name = L"tmMaxElemnt";
 			this->tmMaxElemnt->Size = System::Drawing::Size(387, 20);
 			this->tmMaxElemnt->TabIndex = 1;
-			this->tmMaxElemnt->Text = data->Array[data->MaxID].ToString();
+			this->tmMaxElemnt->Text = data->vector[data->MaxID].ToString();
 			// 
 			// lMaxElement
 			// 
@@ -243,7 +243,7 @@ namespace practicaltask {
 			this->tbArr->Size = System::Drawing::Size(585, 174);
 			this->tbArr->TabIndex = 1;
 			for (int i = 0; i < data->Count; i++) {
-				this->tbArr->Text += data->Array[i].ToString();
+				this->tbArr->Text += data->vector[i].ToString();
 				if (i + 1 < data->Count) {
 					this->tbArr->Text += L", ";
 				}
